@@ -1,3 +1,26 @@
+### Mandatory ###
+function Set-LocationWithGCI
+{
+    param(
+        $path
+    )
+    if (Test-Path $path)
+    {
+        $path = Resolve-Path $path
+        Set-Location $path
+        Get-ChildItem $path
+    }
+    else
+    {
+        "Could not find path $path"
+    }
+}
+Set-Alias cdd Set-LocationWithGCI -Force
+
+### optional ###
+Remove-Item alias:\cd
+New-Alias cd Set-LocationWithGCI
+
 echo "$env:POSH_THEMES_PATH"
 Import-Module -Name Terminal-Icons
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gessyXdracula.omp.json" | Invoke-Expression
