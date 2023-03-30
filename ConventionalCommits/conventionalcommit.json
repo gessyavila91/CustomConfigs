@@ -1,13 +1,179 @@
 {
 	"types": {
-		"refactor": {
-			"description": "Changes which neither fix a bug nor add a feature"
+		"feat": {
+			"description": "Changes which introduce new features to the system.",
+			"scopes": {
+				"auth": {
+					"description": "Changes related to the authentication system."
+				},
+				"views": {
+					"description": "Changes related to the creation or modification of views"
+				},
+				"models": {
+					"description": "Changes related to the creation or modification of models"
+				},
+				"controllers": {
+					"description": "Changes related to the creation or modification of controllers"
+				},
+				"routes": {
+					"description": "Changes related to the creation or modification of routes"
+				},
+				"middleware": {
+					"description": "Changes related to the creation or modification of middleware"
+				}
+			}
 		},
 		"fix": {
-			"description": "Changes which patch a bug"
+			"description": "Changes which fix bugs in the system.",
+			"scopes": {
+				"bug": {
+					"description": "Changes related to the correction of errors in the code."
+				},
+				"security": {
+					"description": "Changes related to the correction of security problems in the system."
+				},
+				"tests": {
+					"description": "Changes related to the correction of problems in automated tests."
+				},
+				"performance": {
+					"description": "Changes related to the correction of performance problems in the system."
+				},
+				"documentation": {
+					"description": "Changes related to the correction of problems in the system documentation."
+				},
+				"dependencies": {
+					"description": "Changes related to the correction of problems related to the project dependencies."
+				}
+			}
 		},
-		"feat": {
-			"description": "Changes which introduce a new feature"
+		"docs": {
+			"description": "Changes which affect documentation",
+			"scopes": {
+				"readme": {
+					"description": "Changes in the README file"
+				},
+				"docs": {
+					"description": "Changes in general documentation, like updating manuals or tutorials"
+				},
+				"comments": {
+					"description": "Changes in the source code comments"
+				},
+				"changelog": {
+					"description": "Changes in the CHANGELOG file"
+				},
+				"wiki": {
+					"description": "Changes in the project wiki"
+				}
+			}
+		},
+		"style": {
+			"description": "Changes which don't affect code logic, such as white-spaces, formatting, missing semi-colons",
+			"scopes": {
+				"css": {
+					"description": "Changes in the project CSS style sheet"
+				},
+				"design": {
+					"description": "Changes in the visual design of the project user interface"
+				},
+				"formatting": {
+					"description": "Changes in the code formatting, such as removing whitespace or reorganizing the code structure"
+				},
+				"linting": {
+					"description": "Changes in the project linting configuration"
+				},
+				"typography": {
+					"description": "Changes in the project typography, such as the choice of new fonts or the correction of readability problems"
+				}
+			}
+		},
+		"refactor": {
+			"description": "Changes which neither fix a bug nor add a feature",
+			"scopes": {
+				"controllers": {
+					"description": "Changes in the project controllers"
+				},
+				"models": {
+					"description": "Changes in the project models"
+				},
+				"views": {
+					"description": "Changes in the project views"
+				},
+				"tests": {
+					"description": "Changes in the project automated tests"
+				},
+				"database": {
+					"description": "Changes in the project database structure"
+				},
+				"performance": {
+					"description": "Changes in the code with the objective of improving the project performance"
+				},
+				"cleanup": {
+					"description": "Changes in the code that do not have a specific function, such as the removal of dead code or the correction of minor problems"
+				}
+			}
+		},
+		"test": {
+			"description": "Changes which add missing tests or correct existing tests",
+			"scopes": {
+				"unit": {
+					"description": "Changes in the project unit tests"
+				},
+				"integration": {
+					"description": "Changes in the project integration tests"
+				},
+				"functional": {
+					"description": "Changes in the project functional tests"
+				},
+				"end-to-end": {
+					"description": "Changes in the project end-to-end tests"
+				},
+				"coverage": {
+					"description": "Changes in the project automated tests coverage"
+				}
+			}
+		},
+		"chore": {
+			"description": "Changes which don't modify src or test files, such as build tasks, package manager",
+			"scopes": {
+				"dependencies": {
+					"description": "Changes related to the project dependencies, such as the update of packages or the installation of new libraries"
+				},
+				"build": {
+					"description": "Changes related to the project build process, such as the configuration of automation tools or the creation of build scripts"
+				},
+				"deployment": {
+					"description": "Changes related to the project deployment process, such as the configuration of servers or the creation of automated deployment scripts"
+				},
+				"config": {
+					"description": "Changes related to the project configuration, such as the update of environment variables or the configuration of new configuration options"
+				},
+				"scripts": {
+					"description": "Changes related to the application scripts, such as the creation of new automation scripts or the update of existing scripts"
+				}
+			}
+		},
+		"ci": {
+			"description": "Changes which affect CI configuration files and scripts.<br/>Example scopes: travis, circle, browser-stack, sauce-labs",
+			"scopes": {
+				"travis": {
+					"description": "Changes in the Travis CI configuration"
+				},
+				"jenkins": {
+					"description": "Changes in the Jenkins configuration"
+				},
+				"gitlab-ci": {
+					"description": "Changes in the GitLab CI/CD configuration"
+				},
+				"pipeline": {
+					"description": "Changes in the CI pipeline definition, including changes in the script or configuration used to run the CI"
+				},
+				"testing": {
+					"description": "Changes in the test scripts that are run as part of the CI"
+				},
+				"deploy": {
+					"description": "Changes in the deployment configuration that is run as part of the CI"
+				}
+			}
 		},
 		"build": {
 			"description": "Changes which affect the build system or external dependencies.<br/>Example scopes: gulp, broccoli, npm",
@@ -17,38 +183,15 @@
 				"broccoli": {}
 			}
 		},
-		"chore": {
-			"description": "Changes which aren't user-facing"
-		},
-		"style": {
-			"description": "Changes which don't affect code logic, such as white-spaces, formatting, missing semi-colons",
-			"scopes": {
-				"ViewBlade": {
-					"description": "laravel views blades"
-				}
-			}
-		},
-		"test": {
-			"description": "Changes which add missing tests or correct existing tests"
-		},
-		"docs": {
-			"description": "Changes which affect documentation"
-		},
 		"perf": {
 			"description": "Changes which improve performance"
-		},
-		"ci": {
-			"description": "Changes which affect CI configuration files and scripts.<br/>Example scopes: travis, circle, browser-stack, sauce-labs"
 		},
 		"revert": {
 			"description": "Changes which revert a previous commit"
 		}
 	},
 	"commonScopes": {
-		"DomainAdmin": {
-			"description": "admin app/admin"
-		},
-		"DomainApp": {
+		"App": {
 			"description": "domain folder app/Http, app/Models, app/*, routes"
 		},
 		"Database": {
@@ -56,7 +199,7 @@
 		},
 		"Config": {
 			"description": "config"
-		},		
+		},
 		"Test": {
 			"description": "test files"
 		}
