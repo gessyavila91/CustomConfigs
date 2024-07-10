@@ -1,6 +1,6 @@
 {
   "$schema": "",
-  "console_title_template": "{{.Shell}} in {{.PWD}}", // outputs: zsh in /usr/home/omp
+  "console_title_template": "{{.Shell}} in {{.PWD}}",
   "blocks": [
     {
       "alignment": "left",
@@ -29,7 +29,7 @@
           "style": "powerline",
           "powerline_symbol": "\uE0B0",
           "background": "#6272a4",
-          "foreground": "#f8f8f2",          
+          "foreground": "#f8f8f2",
           "background_templates": [
             "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
             "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
@@ -57,20 +57,21 @@
         }
       ]
     },
-
     {
       "alignment": "left",
       "newline": true,
       "segments": [
         {
           "type": "shell",
+          "style": "powerline",
+          "powerline_symbol": "",
           "background": "#0077c2",
           "foreground": "#f8f8f2",
-          "newline": "true",
-          "leading_diamond": "\u256d\u2500\ue0b6",
-          "trailing_diamond": "\ue0b0",
-          "style": "diamond",
-          "template": " \uf120"
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": "zsh"
+            }
+          }
         },
         {
           "background": "#6272a4",

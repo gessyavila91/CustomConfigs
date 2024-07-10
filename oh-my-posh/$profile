@@ -36,4 +36,5 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 ####### ZSH
-# eval "$(oh-my-posh init zsh --config ~/gessyXdracula.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gessyXdracula.$
+brew --prefix oh-my-posh
